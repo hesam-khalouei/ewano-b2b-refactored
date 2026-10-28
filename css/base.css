@@ -1,0 +1,372 @@
+
+/* =========================================================
+   EWANO B2B — Base Styles
+   ========================================================= */
+
+:root {
+  --persian-green: #00D4B4;
+  --persian-green-dark: #00A68C;
+  --persian-green-deep: #007A66;
+  --persian-green-glow: rgba(0, 212, 180, 0.28);
+  --persian-green-soft: rgba(0, 212, 180, 0.12);
+  --pastel-green: #3DD598;
+
+  --persian-orange: #FF7722;
+  --persian-orange-dark: #E05A00;
+  --persian-orange-glow: rgba(255, 119, 34, 0.28);
+  --persian-orange-soft: rgba(255, 119, 34, 0.12);
+
+  --supernova: #FFDB04;
+  --royal-purple: #6F59A9;
+  --persian-rose: #F16273;
+  --sky-blue: #0093DD;
+
+  --outer-space: #444444;
+  --bg-dark: #0E1318;
+  --bg-dark-card: #171F26;
+  --bg-dark-elevated: #1F2933;
+
+  --whiteout: #F9FBFC;
+  --text-light: #F9FBFC;
+  --text-muted: #94A3B8;
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-green: rgba(0, 212, 180, 0.35);
+
+  --font-main: 'Vazirmatn', 'IRANYekanX',
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --header-height: 72px;
+  --footer-height: 68px;
+  --page-gutter: clamp(16px, 3vw, 48px);
+  --content-max-width: 1600px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg-dark);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  direction: rtl;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--persian-green);
+  outline-offset: 3px;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+}
+
+input,
+textarea {
+  user-select: text;
+}
+
+::selection {
+  background: var(--persian-green);
+  color: #071310;
+}
+
+/* Ambient background */
+
+.ambient-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(0, 212, 180, 0.13) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 82%,
+      rgba(255, 119, 34, 0.09) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(111, 89, 169, 0.06) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      #0B0F13 0%,
+      #121820 50%,
+      #0D1318 100%
+    );
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  mask-image: radial-gradient(
+    circle at center,
+    black 40%,
+    transparent 90%
+  );
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.45;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  width: min(460px, 80vw);
+  aspect-ratio: 1;
+  background: var(--persian-green);
+  top: -140px;
+  right: -100px;
+}
+
+.orb-2 {
+  width: min(380px, 70vw);
+  aspect-ratio: 1;
+  background: var(--persian-orange);
+  bottom: -140px;
+  left: -80px;
+  animation-delay: -6s;
+}
+
+.orb-3 {
+  width: min(300px, 55vw);
+  aspect-ratio: 1;
+  background: var(--sky-blue);
+  top: 40%;
+  left: 35%;
+  opacity: 0.18;
+  animation-delay: -11s;
+}
+
+/* Global animations */
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 30px) scale(1.08);
+  }
+  100% {
+    transform: translate(30px, -25px) scale(0.95);
+  }
+}
+
+@keyframes fadeUpIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatCard1 {
+  0% {
+    transform: translate3d(-85px, -45px, 40px) rotate(-8deg);
+  }
+  100% {
+    transform: translate3d(-95px, -58px, 50px) rotate(-5deg);
+  }
+}
+
+@keyframes floatCard2 {
+  0% {
+    transform: translate3d(10px, 15px, 60px) rotate(3deg);
+  }
+  100% {
+    transform: translate3d(15px, 2px, 75px) rotate(6deg);
+  }
+}
+
+@keyframes floatCard3 {
+  0% {
+    transform: translate3d(100px, 75px, 20px) rotate(13deg);
+  }
+  100% {
+    transform: translate3d(110px, 62px, 35px) rotate(10deg);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes ph-tap {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes qr-line {
+  to {
+    top: 92%;
+  }
+}
+
+@keyframes chat-dot {
+  50% {
+    opacity: 0.3;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes lm-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes lm-slide-ltr {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes clientScrollRight {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes clientScrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Consistent typography */
+
+body,
+button,
+input,
+select,
+textarea,
+svg text,
+.phone-screen,
+.city-lbl,
+.city-n {
+  font-family: 'IRANYekanX', 'Vazirmatn',
+    -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,868 @@
+
+/* =========================================================
+   EWANO B2B — Responsive System
+   Desktop / Laptop / Tablet / Mobile
+   ========================================================= */
+
+/* ---------- Global overflow protection ---------- */
+
+html,
+body {
+  max-width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+.slide,
+.slide-inner,
+.glass-card,
+.grid-2,
+.grid-2-asym,
+.grid-3,
+.grid-4,
+.grid-5,
+.ecosystem-layout,
+.step-hero-panel,
+.calc-grid-layout,
+.demo-slide-grid,
+.network-map-grid {
+  min-width: 0;
+}
+
+.slide img,
+.slide svg {
+  max-width: 100%;
+}
+
+.slide table {
+  max-width: 100%;
+}
+
+.slide pre,
+.slide .code-block {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.slide p,
+.slide li,
+.slide h1,
+.slide h2,
+.slide h3,
+.slide h4 {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Large desktop: 1440px and above ---------- */
+
+@media (min-width: 1440px) {
+  .slide {
+    padding-inline: clamp(32px, 4vw, 72px);
+  }
+
+  .slide-inner {
+    width: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Laptop: 1181px–1439px ---------- */
+
+@media (max-width: 1439px) {
+  .slide {
+    padding-inline: clamp(24px, 3vw, 48px);
+  }
+
+  .grid-2,
+  .grid-2-asym,
+  .step-hero-panel,
+  .ecosystem-layout {
+    min-width: 0;
+  }
+}
+
+/* ---------- Small laptops and tablets: <= 1180px ---------- */
+
+@media (max-width: 1180px) {
+  .chapter-nav {
+    display: none !important;
+  }
+
+  .slide {
+    padding: 24px;
+  }
+
+  .grid-2,
+  .grid-2-asym,
+  .step-hero-panel,
+  .ecosystem-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .services-10-grid,
+  .brands-25-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .slide-headline,
+  h1.slide-headline {
+    font-size: clamp(26px, 3vw, 40px);
+  }
+
+  .hero-cards-stage {
+    max-width: 100%;
+  }
+
+  .network-map-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Tablet: <= 900px ---------- */
+
+@media (max-width: 900px) {
+  .grid-3,
+  .grid-4,
+  .grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .companies-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .services-10-grid,
+  .brands-25-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .calc-grid-layout,
+  .demo-slide-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .glass-card {
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE — 768px and below
+   ========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 54px;
+    --footer-height: 54px;
+    --page-gutter: 14px;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* Header */
+
+  .deck-header {
+    position: fixed;
+    inset: 0 0 auto;
+    width: 100%;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    padding-inline: 12px;
+    gap: 8px;
+    z-index: 100;
+  }
+
+  .brand-cluster {
+    min-width: 0;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 9px;
+  }
+
+  .brand-titles {
+    min-width: 0;
+  }
+
+  .brand-titles .main-title {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .brand-titles .main-title span:nth-child(2) {
+    display: none;
+  }
+
+  .brand-titles .sub-title {
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  .co-pill,
+  .chapter-nav {
+    display: none !important;
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+    gap: 6px;
+  }
+
+  .icon-btn {
+    min-width: 34px;
+    min-height: 34px;
+    height: 34px;
+    padding-inline: 9px;
+    font-size: 11px;
+    border-radius: 9px;
+  }
+
+  .header-actions .icon-btn[onclick="toggleFullScreen()"] {
+    display: none !important;
+  }
+
+  .header-actions .icon-btn[onclick="toggleDrawer()"] {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .header-actions .icon-btn[onclick="toggleDrawer()"] span {
+    display: none;
+  }
+
+  /* Slide stage */
+
+  .stage-container {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    bottom: var(--footer-height);
+    left: 0;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: 16px var(--page-gutter) 28px !important;
+    justify-content: flex-start !important;
+    align-items: stretch;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .slide-inner {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    min-height: min-content;
+    flex: 0 0 auto;
+    justify-content: flex-start !important;
+    align-items: stretch;
+    gap: 14px !important;
+    padding-bottom: 18px;
+  }
+
+  .slide-inner > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Typography */
+
+  .slide-top-meta {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eyebrow-badge {
+    max-width: 100%;
+    font-size: 10px;
+    line-height: 1.6;
+    padding: 4px 10px;
+  }
+
+  .slide-headline,
+  h1.slide-headline {
+    max-width: 100%;
+    font-size: clamp(21px, 5vw, 29px) !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .slide-subtitle {
+    max-width: 100%;
+    font-size: 13px !important;
+    line-height: 1.8 !important;
+  }
+
+  .slide h2 {
+    line-height: 1.5;
+  }
+
+  .slide h3 {
+    line-height: 1.55;
+  }
+
+  .slide p,
+  .slide li {
+    line-height: 1.8;
+  }
+
+  /* Cards */
+
+  .glass-card {
+    width: 100%;
+    min-width: 0;
+    padding: 15px !important;
+    border-radius: 16px !important;
+  }
+
+  .glass-card h3 {
+    font-size: 16px !important;
+  }
+
+  .glass-card h4,
+  .service-tile h4 {
+    font-size: 14px !important;
+  }
+
+  /* Responsive grids */
+
+  .grid-2,
+  .grid-2-asym,
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .ecosystem-layout,
+  .step-hero-panel,
+  .calc-grid-layout,
+  .demo-slide-grid,
+  .network-map-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .companies-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .services-10-grid,
+  .brands-25-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .companies-grid > *,
+  .services-10-grid > *,
+  .brands-25-grid > * {
+    min-width: 0;
+  }
+
+  /* Hero cards */
+
+  .hero-cards-stage {
+    width: 100%;
+    max-width: 100%;
+    height: 330px !important;
+    margin-top: 8px;
+    overflow: hidden;
+    transform: none;
+    perspective: 900px;
+  }
+
+  .ewano-3d-card {
+    width: min(280px, 78vw) !important;
+    height: 168px !important;
+    padding: 16px !important;
+  }
+
+  .ewano-3d-card.card-welfare {
+    transform: translate3d(-25px, -65px, 10px) rotate(-7deg) !important;
+  }
+
+  .ewano-3d-card.card-credit {
+    transform: translate3d(-10px, -20px, 30px) rotate(-2deg) !important;
+  }
+
+  .ewano-3d-card.card-cash {
+    transform: translate3d(10px, 25px, 50px) rotate(3deg) !important;
+  }
+
+  .ewano-3d-card.card-debit-black {
+    transform: translate3d(25px, 70px, 70px) rotate(7deg) !important;
+  }
+
+  /* Journey rail */
+
+  .journey-progress-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    padding: 10px !important;
+  }
+
+  .rail-step {
+    min-width: 0;
+    padding: 8px !important;
+    gap: 6px;
+  }
+
+  .rail-num {
+    width: 25px !important;
+    height: 25px !important;
+    min-width: 25px;
+    font-size: 11px !important;
+  }
+
+  .rail-label {
+    font-size: 11px !important;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* Calculator */
+
+  .calc-inputs {
+    min-width: 0;
+    padding: 14px !important;
+    gap: 12px !important;
+  }
+
+  .calc-amount {
+    font-size: 17px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .calc-ticks {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .calc-ticks b {
+    font-size: 10px !important;
+  }
+
+  .calc-result {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+
+  .calc-res-main {
+    min-width: 0;
+  }
+
+  .calc-res-main b {
+    font-size: 24px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .calc-res-list {
+    min-width: 0;
+    border-right: 0 !important;
+    padding-right: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 12px;
+  }
+
+  /* Demo phone mockup */
+
+  .phone {
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    min-height: 480px;
+    margin-inline: auto;
+  }
+
+  .demo-tabs {
+    flex-wrap: wrap;
+    gap: 5px !important;
+  }
+
+  .demo-tab {
+    min-height: 32px;
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+
+  /* UX flow */
+
+  .ux-flow-card {
+    min-width: 0;
+    padding: 15px !important;
+  }
+
+  .ux-flow-steps {
+    flex-wrap: wrap;
+    gap: 7px !important;
+    justify-content: center !important;
+  }
+
+  .ux-step-pill {
+    max-width: 100%;
+    padding: 8px 11px !important;
+    font-size: 12px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .ux-step-arrow {
+    font-size: 15px !important;
+  }
+
+  /* Iran map */
+
+  .imap-svg {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    max-height: 300px !important;
+    margin-inline: auto;
+  }
+
+  /* Why Ewano */
+
+  .why-pillar-card {
+    width: 100%;
+    min-height: auto !important;
+    padding: 16px 14px !important;
+  }
+
+  .why-pillar-title {
+    font-size: 18px !important;
+    line-height: 1.5;
+  }
+
+  .why-pillar-desc {
+    font-size: 13px !important;
+    line-height: 1.8;
+  }
+
+  /* Tables and wide content */
+
+  .slide table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .slide pre {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  /* Footer */
+
+  .deck-footer {
+    position: fixed;
+    inset: auto 0 0;
+    width: 100%;
+    height: var(--footer-height);
+    min-height: var(--footer-height);
+    padding: 0 12px;
+    z-index: 100;
+  }
+
+  .nav-controls {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav-arrow-btn {
+    min-height: 36px;
+    padding-inline: 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .slide-counter-pill {
+    flex-shrink: 0;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .slide-dots,
+  .deck-footer > div:last-child {
+    display: none !important;
+  }
+
+  /* Drawers and modals */
+
+  .drawer,
+  .side-drawer {
+    max-width: min(88vw, 360px);
+  }
+
+  .modal,
+  .modal-content,
+  .dialog {
+    width: calc(100% - 24px);
+    max-width: 480px;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE — 480px and below
+   ========================================================= */
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 50px;
+    --footer-height: 52px;
+    --page-gutter: 12px;
+  }
+
+  .deck-header {
+    height: 50px;
+    min-height: 50px;
+    padding-inline: 10px;
+  }
+
+  .stage-container {
+    top: 50px;
+    bottom: 52px;
+  }
+
+  .deck-footer {
+    height: 52px;
+    min-height: 52px;
+    padding-inline: 10px;
+  }
+
+  .slide {
+    padding: 14px 12px 24px !important;
+  }
+
+  .slide-inner {
+    gap: 12px !important;
+  }
+
+  .slide-headline,
+  h1.slide-headline {
+    font-size: clamp(19px, 5.2vw, 23px) !important;
+    line-height: 1.45 !important;
+  }
+
+  .slide-subtitle {
+    font-size: 12.5px !important;
+  }
+
+  .glass-card {
+    padding: 13px !important;
+    border-radius: 14px !important;
+  }
+
+  .hero-cards-stage {
+    height: 300px !important;
+  }
+
+  .ewano-3d-card {
+    width: min(260px, 76vw) !important;
+    height: 156px !important;
+    padding: 14px !important;
+  }
+
+  .phone {
+    max-width: 100% !important;
+    min-height: 440px;
+  }
+
+  .companies-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .services-10-grid,
+  .brands-25-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .nav-arrow-btn {
+    min-height: 34px;
+    padding-inline: 9px;
+    font-size: 11px;
+  }
+
+  .slide-counter-pill {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .orb {
+    filter: blur(55px);
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE — 360px and below
+   ========================================================= */
+
+@media (max-width: 360px) {
+  :root {
+    --page-gutter: 10px;
+  }
+
+  .brand-titles .main-title {
+    font-size: 11px;
+  }
+
+  .brand-titles .sub-title {
+    font-size: 8px;
+  }
+
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .icon-btn {
+    min-width: 30px;
+    padding-inline: 6px;
+  }
+
+  .slide {
+    padding-inline: 10px !important;
+  }
+
+  .slide-headline,
+  h1.slide-headline {
+    font-size: 19px !important;
+  }
+
+  .journey-progress-rail {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .companies-grid,
+  .services-10-grid,
+  .brands-25-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hero-cards-stage {
+    height: 270px !important;
+  }
+
+  .nav-controls {
+    gap: 5px;
+  }
+
+  .nav-arrow-btn {
+    padding-inline: 7px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+  :root {
+    --header-height: 46px;
+    --footer-height: 46px;
+  }
+
+  .deck-header {
+    height: 46px;
+    min-height: 46px;
+  }
+
+  .stage-container {
+    top: 46px;
+    bottom: 46px;
+  }
+
+  .deck-footer {
+    height: 46px;
+    min-height: 46px;
+  }
+
+  .slide {
+    padding-block: 12px !important;
+  }
+
+  .slide-inner {
+    gap: 10px !important;
+  }
+
+  .slide-headline,
+  h1.slide-headline {
+    font-size: 21px !important;
+  }
+
+  .hero-cards-stage {
+    height: 240px !important;
+  }
+
+  .phone {
+    max-height: 65dvh;
+    min-height: 0;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .ewano-3d-card,
+  .client-track,
+  .logo-track {
+    animation: none !important;
+    transition: none !important;
+  }
+}

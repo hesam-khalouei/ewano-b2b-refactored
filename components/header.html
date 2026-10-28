@@ -1,0 +1,58 @@
+
+<!-- Header -->
+<header class="deck-header">
+  <div class="brand-cluster flex flex-gap-20">
+    <div class="header-ewano-logo" onclick="goToSlide(0)" title="اوانو">
+      <img
+        src="assets/images/logos/partners/ewano.svg"
+        alt="Ewano"
+        style="height:44px;width:auto;border-radius:10px;display:block;"
+      >
+    </div>
+
+    <div
+      class="header-partner-logos flex flex-gap-16"
+      style="padding-right:16px;border-right:1px solid rgba(255,255,255,0.15);"
+    >
+      <img
+        src="assets/images/logos/partners/ebcom.svg"
+        alt="EBCOM"
+        title="همراه کسب‌وکارهای هوشمند (EBCOM)"
+        style="height:28px;width:auto;display:block;"
+      >
+      <span style="display:inline-block;width:1px;height:24px;background:rgba(255,255,255,0.18);"></span>
+      <img
+        src="assets/images/logos/partners/mci.svg"
+        alt="MCI"
+        title="همراه اول"
+        style="height:28px;width:auto;display:block;"
+      >
+    </div>
+  </div>
+
+  <nav class="chapter-nav" id="chapterNav">
+    <button class="chapter-btn active" onclick="goToSlide(0)">۱. اکوسیستم و اوانو</button>
+    <button class="chapter-btn" onclick="goToSlide(5)">۲. دمو و ماشین‌حساب</button>
+    <button class="chapter-btn" onclick="goToSlide(10)">۳. مسیر ۶ مرحله‌ای اعتبار</button>
+    <button class="chapter-btn" onclick="goToSlide(15)">۴. رفاهیات و راهکار نقدی</button>
+    <button class="chapter-btn" onclick="goToSlide(19)">۵. شبکه پذیرندگی و آمار</button>
+  </nav>
+
+  <div class="header-actions">
+    <button class="icon-btn" onclick="toggleDrawer()" title="فهرست اسلایدها">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <span>فهرست اسلایدها</span>
+    </button>
+
+    <button class="icon-btn" onclick="toggleFullScreen()" title="نمایش تمام‌صفحه (کلید F)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+      </svg>
+      <span>تمام‌صفحه</span>
+    </button>
+  </div>
+</header>

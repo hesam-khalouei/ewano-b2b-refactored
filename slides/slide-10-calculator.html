@@ -1,0 +1,103 @@
+<section class="slide" data-chapter="1" data-title="ماشین حساب اعتبار خرید و نحوه محاسبه اقساط">
+    <div class="slide-inner">
+      <div class="slide-top-meta anim-up delay-1">
+        <span class="eyebrow-badge">فصل دوم · شبیه‌ساز مالی و محاسبه اقساط اعتبار</span>
+        <span class="text-sm text-green font-black">فرمول رسمی: مبلغ هر قسط = (اصل اعتبار ÷ تعداد اقساط) + (اصل اعتبار × درصد کارمزد)</span>
+      </div>
+
+      <h2 class="slide-headline anim-up delay-2">
+        ماشین حساب <span class="accent-green">اعتبار خرید</span> و محاسبه اقساط ماهانه
+      </h2>
+
+      <div class="calc-grid-layout anim-up delay-3">
+        <div class="calc no-collapse" id="creditCalc">
+          <div class="calc-inputs">
+            <div class="calc-row">
+              <div class="calc-row-head">
+                <label for="calcAmount">اصل مبلغ اعتبار مصرفی (تومان)</label>
+                <output id="calcAmountOut" for="calcAmount" class="calc-amount"></output>
+              </div>
+              <div class="calc-track">
+                <div class="calc-line" aria-hidden="true"><i></i></div>
+                <div class="calc-ticks" aria-hidden="true"></div>
+                <span class="calc-pin" aria-hidden="true"><svg viewBox="0 0 24 28"><path fill="currentColor" d="M12 1C6.2 1 1.8 5.4 1.8 11c0 7.3 8.7 14.9 9.5 15.6.4.3 1 .3 1.4 0 .8-.7 9.5-8.3 9.5-15.6C22.2 5.4 17.8 1 12 1Z"/><circle cx="12" cy="11" r="4.2" fill="#fff"/></svg></span>
+                <input type="range" id="calcAmount" class="calc-range" min="20000000" max="200000000" step="20000000" value="100000000">
+              </div>
+            </div>
+
+            <div class="calc-row">
+              <div class="calc-row-head">
+                <label for="calcCountIdx">تعداد اقساط (۴، ۶، ۱۲، ۱۸ یا ۲۴ ماهه)</label>
+                <output id="calcCountOut" for="calcCountIdx" class="calc-amount"></output>
+              </div>
+              <div class="calc-track">
+                <div class="calc-line" aria-hidden="true"><i></i></div>
+                <div class="calc-ticks" aria-hidden="true"></div>
+                <span class="calc-pin" aria-hidden="true"><svg viewBox="0 0 24 28"><path fill="currentColor" d="M12 1C6.2 1 1.8 5.4 1.8 11c0 7.3 8.7 14.9 9.5 15.6.4.3 1 .3 1.4 0 .8-.7 9.5-8.3 9.5-15.6C22.2 5.4 17.8 1 12 1Z"/><circle cx="12" cy="11" r="4.2" fill="#fff"/></svg></span>
+                <input type="range" id="calcCountIdx" class="calc-range" min="0" max="4" step="1" value="2">
+              </div>
+            </div>
+
+            <div class="calc-row">
+              <div class="calc-row-head">
+                <label for="calcFeeRate">درصد کارمزد ماهانه (متغیر بر اساس توافق سازمان)</label>
+                <div class="flex flex-gap-10">
+                  <input type="number" id="calcFeeInput" min="0" max="5" step="0.1" value="1.9" dir="ltr" class="bg-dark text-white font-black text-lg text-center rounded-xl border-glass" style="width:74px; padding:4px 8px;">
+                  <output id="calcFeeOut" for="calcFeeRate" class="calc-amount text-orange"></output>
+                </div>
+              </div>
+              <div class="calc-track">
+                <div class="calc-line" aria-hidden="true"><i></i></div>
+                <div class="calc-ticks" aria-hidden="true"></div>
+                <span class="calc-pin" aria-hidden="true"><svg viewBox="0 0 24 28"><path fill="currentColor" d="M12 1C6.2 1 1.8 5.4 1.8 11c0 7.3 8.7 14.9 9.5 15.6.4.3 1 .3 1.4 0 .8-.7 9.5-8.3 9.5-15.6C22.2 5.4 17.8 1 12 1Z"/><circle cx="12" cy="11" r="4.2" fill="#fff"/></svg></span>
+                <input type="range" id="calcFeeRate" class="calc-range" min="0" max="4" step="0.1" value="1.9">
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-result" aria-live="polite">
+            <div>
+              <span class="calc-res-lbl">مبلغ هر قسط ماهانه</span>
+              <div class="calc-res-main"><b id="calcInst">۱۰٬۲۳۳٬۳۳۳</b><span>تومان در ماه</span></div>
+              <div id="calcFormulaText" class="text-xs text-muted mt-1 dir-ltr" style="text-align:right;">(100,000,000 / 12) + (100,000,000 × 1.9%)</div>
+            </div>
+            <dl class="calc-res-list">
+              <div><dt>سهم اصل اعتبار در هر قسط</dt><dd id="calcResBase">۸٬۳۳۳٬۳۳۳ تومان</dd></div>
+              <div><dt>مبلغ کارمزد هر قسط</dt><dd id="calcResFee" class="text-orange">۱٬۹۰۰٬۰۰۰ تومان</dd></div>
+              <div><dt>تعداد و نرخ کارمزد</dt><dd id="calcResCount">۱۲ قسط · ۱.۹٪</dd></div>
+              <div><dt>مجموع کل بازپرداخت</dt><dd id="calcResTotal" class="text-green">۱۲۲٬۸۰۰٬۰۰۰ تومان</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="calc-side-stack flex-col flex-between flex-gap-14 h-full">
+          <div class="glass-card calc-side-card border-top-green flex-1 flex-col flex-center">
+            <span class="eyebrow-badge mb-2" style="align-self:flex-start;">فرمول محاسبه اقساط اعتبار</span>
+            <h3 class="text-2xl font-black text-white">ساختار شفاف محاسبه هر قسط</h3>
+            <p class="text-sm text-muted">
+              مبلغ هر قسط از مجموع <strong>«اصل مبلغ اعتبار تقسیم بر تعداد اقساط»</strong> به علاوه <strong>«درصد کارمزد ضربدر اصل مبلغ اعتبار مصرفی»</strong> محاسبه می‌شود:
+              <br><strong class="text-green inline-block mt-2">مبلغ هر قسط = (اصل اعتبار ÷ تعداد اقساط) + (اصل اعتبار × درصد کارمزد)</strong>
+            </p>
+          </div>
+
+          <div class="glass-card orange-hover calc-side-card border-top-orange flex-1 flex-col flex-center">
+            <span class="eyebrow-badge orange mb-2" style="align-self:flex-start;">مثال مرجع (کلیک برای بارگذاری)</span>
+            <h3 class="text-2xl font-black text-white">خرید اعتباری ۱۰۰ میلیون تومانی (۱۲ ماهه با کارمزد ۱.۹٪)</h3>
+            <p class="text-sm text-muted">
+              • سهم اصل در هر قسط: <strong>۸٬۳۳۳٬۳۳۳ تومان</strong> (۱۰۰ میلیون ÷ ۱۲)<br>
+              • کارمزد هر قسط: <strong>۱٬۹۰۰٬۰۰۰ تومان</strong> (۱۰۰ میلیون × ۱.۹٪)<br>
+              • <strong>مبلغ نهایی هر قسط: ۱۰٬۲۳۳٬۳۳۳ تومان</strong>
+            </p>
+          </div>
+
+          <div class="glass-card calc-side-card border-top-sky flex-1 flex-col flex-center">
+            <span class="eyebrow-badge text-sky mb-2" style="border-color:rgba(0,147,221,0.4); background:rgba(0,147,221,0.12); align-self:flex-start;">انعطاف در دوره‌های بازپرداخت</span>
+            <h3 class="text-2xl font-black text-white">تعداد اقساط ۴، ۶، ۱۲، ۱۸ و ۲۴ ماهه + کارمزد متغیر</h3>
+            <p class="text-sm text-muted">
+              تعداد اقساط در ۵ بازه استاندارد (۴، ۶، ۱۲، ۱۸ و ۲۴ ماه) قابل انتخاب است و درصد کارمزد نیز بر اساس تفاهم‌نامه و مدل همکاری هر سازمان به صورت متغیر تنظیم می‌گردد.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

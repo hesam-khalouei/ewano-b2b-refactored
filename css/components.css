@@ -1,0 +1,1369 @@
+
+/* ═══════════════════════════════════════════════════════════════
+   EWANO B2B — Components CSS
+   بخش اول: دکمه‌ها، کارت‌ها، گریدها، کارت‌های سه‌بعدی، خدمات
+   ═══════════════════════════════════════════════════════════════ */
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  color: #FFFFFF;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--persian-green);
+  background: var(--persian-green-soft);
+  color: var(--persian-green);
+}
+
+.anim-up {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--persian-green-soft);
+  border: 1px solid var(--border-green);
+  color: var(--persian-green);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.eyebrow-badge.orange {
+  background: var(--persian-orange-soft);
+  border-color: rgba(255, 119, 34, 0.4);
+  color: var(--persian-orange);
+}
+
+.vessel-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--persian-green);
+  border-radius: 999px;
+  padding: 2px 16px;
+  color: var(--persian-green);
+  font-weight: 800;
+  font-size: 0.85em;
+  margin: 0 6px;
+  box-shadow: 0 0 18px rgba(0, 212, 180, 0.2);
+}
+
+.glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(25, 34, 43, 0.88) 0%,
+    rgba(17, 24, 31, 0.92) 100%
+  );
+  border: 1px solid var(--border-glass);
+  border-radius: 22px;
+  padding: 22px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.glass-card:hover {
+  border-color: var(--border-green);
+  box-shadow: 0 18px 42px rgba(0, 212, 180, 0.14);
+}
+
+.glass-card.orange-hover:hover {
+  border-color: rgba(255, 119, 34, 0.5);
+  box-shadow: 0 18px 42px rgba(255, 119, 34, 0.15);
+}
+
+.nav-arrow-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border-glass);
+  color: #FFFFFF;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-arrow-btn:hover:not(:disabled) {
+  background: var(--persian-green);
+  color: #0B0F13;
+  border-color: var(--persian-green);
+  box-shadow: 0 4px 16px var(--persian-green-glow);
+}
+
+.nav-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.svg-flow-line {
+  stroke-dasharray: 6 6;
+  animation: dashFlow 1.6s linear infinite;
+}
+
+.svg-pulse {
+  transform-origin: center;
+  animation: pulseRing 3s ease-in-out infinite;
+}
+
+/* GRID SYSTEM */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.grid-2-asym {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.services-10-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* HERO 3D CARDS — SLIDE 1 */
+
+.hero-cards-stage {
+  position: relative;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+.ewano-3d-card {
+  width: 325px;
+  height: 196px;
+  border-radius: 22px;
+  padding: 20px 22px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease !important;
+  cursor: default;
+  overflow: hidden;
+  transform-origin: top center;
+}
+
+.ewano-3d-card .card-balance-sub {
+  max-height: 60px !important;
+  opacity: 0.92 !important;
+  transform: none !important;
+  margin-top: 4px !important;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ewano-3d-card.card-welfare {
+  background: linear-gradient(135deg, #0093DD 0%, #00548A 100%);
+  transform: translate3d(-115px, -105px, 10px) rotate(-9deg);
+  z-index: 2;
+}
+
+.ewano-3d-card.card-credit {
+  background: linear-gradient(135deg, #FF7722 0%, #C84B00 100%);
+  transform: translate3d(-40px, -38px, 30px) rotate(-3deg);
+  z-index: 3;
+}
+
+.ewano-3d-card.card-cash {
+  background: linear-gradient(135deg, #00D4B4 0%, #008872 100%);
+  transform: translate3d(35px, 30px, 50px) rotate(3deg);
+  z-index: 4;
+}
+
+.ewano-3d-card.card-debit-black {
+  background: linear-gradient(135deg, #2A2D32 0%, #121417 55%, #090A0C 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  transform: translate3d(110px, 98px, 70px) rotate(9deg);
+  z-index: 5;
+  padding: 0;
+}
+
+.ewano-3d-card.card-debit-black::after {
+  display: none;
+}
+
+.ewano-3d-card.card-welfare:hover {
+  z-index: 20 !important;
+  transform: translate3d(-115px, -118px, 110px) rotate(0deg) scale(1.06) !important;
+  box-shadow: 0 30px 65px rgba(0, 147, 221, 0.5) !important;
+  border-color: #FFFFFF !important;
+}
+
+.ewano-3d-card.card-credit:hover {
+  z-index: 20 !important;
+  transform: translate3d(-40px, -52px, 110px) rotate(0deg) scale(1.06) !important;
+  box-shadow: 0 30px 65px rgba(255, 119, 34, 0.5) !important;
+  border-color: #FFFFFF !important;
+}
+
+.ewano-3d-card.card-cash:hover {
+  z-index: 20 !important;
+  transform: translate3d(35px, 16px, 110px) rotate(0deg) scale(1.06) !important;
+  box-shadow: 0 30px 65px rgba(0, 212, 180, 0.5) !important;
+  border-color: #FFFFFF !important;
+}
+
+.ewano-3d-card.card-debit-black:hover {
+  z-index: 20 !important;
+  transform: translate3d(110px, 84px, 110px) rotate(0deg) scale(1.06) !important;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.9),
+    0 0 28px rgba(0, 212, 180, 0.45) !important;
+  border-color: var(--persian-green) !important;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-chip {
+  width: 38px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.45),
+    rgba(255,255,255,0.15)
+  );
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.card-balance-title {
+  font-size: 18px;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+.card-balance-sub {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Debit card flip */
+
+.ewano-3d-card.card-debit-black {
+  perspective: 1200px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.debit-flipper-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.75s cubic-bezier(0.2, 0.9, 0.3, 1.15);
+  transform-style: preserve-3d;
+  border-radius: 22px;
+  box-shadow:
+    0 24px 50px rgba(0,0,0,0.7),
+    0 0 0 1.5px rgba(255,255,255,0.25);
+}
+
+.ewano-3d-card.card-debit-black.is-flipped .debit-flipper-inner {
+  transform: rotateY(180deg);
+  box-shadow:
+    0 28px 60px rgba(0,212,180,0.4),
+    0 0 0 2px var(--persian-green);
+}
+
+.debit-side {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.debit-back {
+  transform: rotateY(180deg);
+}
+
+/* ECOSYSTEM & SERVICES */
+
+.ecosystem-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.company-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #E2E8F0;
+  transition: all 0.25s ease;
+}
+
+.company-pill:hover {
+  border-color: var(--persian-green);
+  background: var(--persian-green-soft);
+  transform: translateX(-4px);
+}
+
+.company-pill.featured-ebcom {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 180, 0.22),
+    rgba(0, 212, 180, 0.06)
+  );
+  border: 1.5px solid var(--persian-green);
+  color: #FFFFFF;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(0, 212, 180, 0.2);
+}
+
+.comp-logo-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.comp-logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.comp-logo-box.placeholder-logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--persian-green);
+  background: rgba(0,212,180,0.12);
+  border-color: rgba(0,212,180,0.3);
+}
+
+.comp-name {
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-tile {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 16px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.28s ease;
+}
+
+.service-tile:hover,
+.service-tile.active {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 212, 180, 0.18) 0%,
+    rgba(0, 212, 180, 0.04) 100%
+  );
+  border-color: var(--persian-green);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(0, 212, 180, 0.18);
+}
+
+.service-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: rgba(0, 212, 180, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--persian-green);
+  transition: all 0.25s ease;
+}
+
+.service-tile:hover .service-icon-box,
+.service-tile.active .service-icon-box {
+  background: var(--persian-green);
+  color: #0B0F13;
+  transform: scale(1.08);
+}
+
+.service-tile h4 {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.service-tile p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* BRANDS & LOGOS */
+
+.brands-25-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.brands-25-grid .brand-tile {
+  padding: 16px 18px !important;
+  border-radius: 18px !important;
+  min-height: 72px;
+}
+
+.brands-25-grid .brand-logo-slot {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  padding: 6px !important;
+  margin-left: 14px !important;
+}
+
+.brands-25-grid .brand-tile-name {
+  font-size: 18px !important;
+  font-weight: 900 !important;
+}
+
+.brands-25-grid .brand-tile-cat {
+  font-size: 13px !important;
+  padding: 4px 10px !important;
+  border-radius: 10px !important;
+}
+
+.brand-logo-slot {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 3px;
+  margin-left: 8px;
+  overflow: hidden;
+}
+
+.brand-logo-slot img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-logo-slot.placeholder-brand {
+  background: rgba(255,255,255,0.1);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.brand-logo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px !important;
+  border-radius: 12px !important;
+  font-size: 13.5px !important;
+  font-weight: 800;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+}
+
+.pill-brand-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.pill-brand-placeholder {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,212,180,0.2);
+  color: var(--persian-green);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.comp-logo-box,
+.brand-logo-slot,
+.pill-brand-logo,
+.client-circle-logo,
+.client-logo-box,
+.logo-dot {
+  background: #FFFFFF !important;
+}
+
+/* CALCULATOR — SLIDE 10 */
+
+.calc-grid-layout {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 24px;
+  align-items: stretch !important;
+}
+
+.calc {
+  background: linear-gradient(
+    145deg,
+    rgba(25, 34, 43, 0.94) 0%,
+    rgba(15, 21, 28, 0.98) 100%
+  );
+  border: 1px solid var(--border-green);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-inputs {
+  padding: 20px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calc-row + .calc-row {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-glass);
+}
+
+.calc-row-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.calc-row-head label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #CBD5E1;
+}
+
+.calc-amount {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--persian-green);
+}
+
+.calc-amount small {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 5px;
+}
+
+.calc-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.calc-track {
+  position: relative;
+  height: 58px;
+  --f: 0;
+  direction: ltr;
+}
+
+.calc-track .calc-range {
+  direction: ltr;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.calc-line {
+  position: absolute;
+  top: 30px;
+  left: 12px;
+  right: 12px;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+
+.calc-line i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% * var(--f));
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--persian-green),
+    var(--persian-orange)
+  );
+}
+
+.calc-ticks {
+  position: absolute;
+  top: 30px;
+  left: 12px;
+  right: 12px;
+  height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.calc-ticks i {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: -8px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #171F26;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  transition: all 0.22s ease;
+  font-style: normal;
+}
+
+.calc-ticks i.on {
+  border-color: var(--persian-green);
+  background: rgba(0, 212, 180, 0.25);
+}
+
+.calc-ticks i.cur {
+  background: var(--persian-green);
+  border-color: #FFFFFF;
+  transform: scale(1.28);
+  box-shadow: 0 0 14px var(--persian-green);
+}
+
+.calc-ticks b {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.calc-ticks i.cur b {
+  color: var(--persian-green);
+  font-weight: 900;
+  font-size: 12.5px;
+}
+
+.calc-pin {
+  position: absolute;
+  top: -2px;
+  left: calc(12px + (100% - 24px) * var(--f));
+  width: 24px;
+  height: 28px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  transition: left 0.15s ease;
+}
+
+.calc-pin svg {
+  width: 24px;
+  height: 28px;
+  display: block;
+  color: var(--persian-orange);
+  filter: drop-shadow(
+    0 4px 10px rgba(255, 119, 34, 0.45)
+  );
+}
+
+.calc-result {
+  position: relative;
+  overflow: hidden;
+  background: #090D11;
+  color: #FAFAFA;
+  padding: 20px 26px;
+  border-top: 1px solid var(--border-glass);
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.calc-res-lbl {
+  font-size: 13px;
+  color: #94A3B8;
+  font-weight: 800;
+}
+
+.calc-res-main {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.calc-res-main b {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--persian-green);
+  line-height: 1.15;
+}
+
+.calc-res-main span {
+  font-size: 13px;
+  color: #CBD5E1;
+  font-weight: 700;
+}
+
+.calc-res-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  padding-right: 20px;
+}
+
+.calc-res-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.calc-res-list dt {
+  color: #94A3B8;
+  font-weight: 700;
+}
+
+.calc-res-list dd {
+  margin: 0;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-size: 13.5px;
+}
+
+.calc-side-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  height: 100%;
+}
+
+.calc-side-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px 26px !important;
+}
+
+.calc-side-card h3 {
+  font-size: clamp(19px, 1.55vw, 23px) !important;
+}
+
+.calc-side-card:hover p {
+  max-height: 500px !important;
+}
+
+/* IPHONE & PWA DEMO — SLIDE 8 */
+
+.demo-slide-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: end !important;
+}
+
+.demo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+}
+
+.iphone-18-pro-max {
+  width: 100% !important;
+  max-width: 608px !important;
+  height: 720px !important;
+  aspect-ratio: 440 / 956;
+  border-radius: 54px !important;
+  padding: 12px !important;
+  background: #000000;
+  box-shadow:
+    0 0 0 3px #3D3D42,
+    0 0 0 5px #1C1C1E,
+    0 30px 75px rgba(0, 0, 0, 0.85),
+    0 0 36px rgba(0, 212, 180, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.iphone-dynamic-island {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 108px;
+  height: 28px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+.island-camera {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #111422;
+  box-shadow: inset 0 0 3px rgba(0, 147, 221, 0.6);
+}
+
+.island-sensor {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0A0D15;
+}
+
+.iphone-screen-wrap {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 42px;
+  overflow: hidden;
+  position: relative;
+}
+
+.iphone-pwa-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #FFFFFF;
+}
+
+/* VOUCHER CARDS — SLIDES 17 & 18 */
+
+.voucher-vertical-stage {
+  position: relative;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.voucher-card-item {
+  position: absolute;
+  width: 220px;
+  height: 330px;
+  perspective: 1200px;
+  cursor: pointer;
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    z-index 0.45s ease;
+}
+
+.vcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.75s cubic-bezier(0.2, 0.9, 0.3, 1.15);
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  box-shadow:
+    0 24px 50px rgba(0,0,0,0.65),
+    0 0 0 1.5px rgba(255,255,255,0.22);
+}
+
+.voucher-card-item.is-flipped .vcard-inner {
+  transform: rotateY(180deg);
+  box-shadow:
+    0 28px 60px rgba(0,212,180,0.45),
+    0 0 0 2px var(--persian-green);
+}
+
+.vcard-side {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #171F26;
+}
+
+.vcard-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vcard-back {
+  transform: rotateY(180deg);
+}
+
+.vc-card-1 {
+  transform: translate3d(85px, 25px, 20px) rotate(6deg);
+  z-index: 3;
+}
+
+.vc-card-2 {
+  transform: translate3d(0, -10px, 45px) rotate(0deg);
+  z-index: 4;
+}
+
+.vc-card-3 {
+  transform: translate3d(-85px, 25px, 10px) rotate(-6deg);
+  z-index: 2;
+}
+
+.vc-card-1:hover {
+  z-index: 10 !important;
+  transform: translate3d(85px, 8px, 90px) rotate(0deg) scale(1.06) !important;
+}
+
+.vc-card-2:hover {
+  z-index: 10 !important;
+  transform: translate3d(0, -22px, 100px) rotate(0deg) scale(1.06) !important;
+}
+
+.vc-card-3:hover {
+  z-index: 10 !important;
+  transform: translate3d(-85px, 8px, 90px) rotate(0deg) scale(1.06) !important;
+}
+
+/* =========================================================
+   RESPONSIVE COMPONENT OVERRIDES
+   Append to the end of css/components.css
+   ========================================================= */
+
+.glass-card,
+.service-tile,
+.company-pill,
+.brand-tile,
+.ux-flow-card,
+.calc,
+.calc-result,
+.calc-inputs,
+.step-visual-box,
+.imap-map,
+.voucher-card-item,
+.client-org-unit {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.glass-card img,
+.service-tile img,
+.company-pill img,
+.brand-tile img,
+.vcard-side img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1180px) {
+  .grid-5,
+  .services-10-grid,
+  .brands-25-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .calc-grid-layout,
+  .demo-slide-grid,
+  .network-map-grid,
+  .ecosystem-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .iphone-18-pro-max {
+    width: min(100%, 440px) !important;
+    height: auto !important;
+    aspect-ratio: 440 / 956;
+  }
+
+  .iphone-screen-wrap {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-2-asym,
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .services-10-grid,
+  .brands-25-grid,
+  .companies-grid,
+  .ecosystem-layout,
+  .calc-grid-layout,
+  .demo-slide-grid,
+  .network-map-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .glass-card {
+    padding: 15px !important;
+    border-radius: 16px !important;
+  }
+
+  .company-pill {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .comp-name {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .service-tile {
+    width: 100%;
+    padding: 14px !important;
+  }
+
+  .service-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .brand-tile {
+    padding: 12px !important;
+    gap: 8px;
+  }
+
+  .brands-25-grid .brand-tile {
+    min-height: 0;
+  }
+
+  .brands-25-grid .brand-logo-slot {
+    width: 38px !important;
+    height: 38px !important;
+    margin-left: 8px !important;
+  }
+
+  .brands-25-grid .brand-tile-name {
+    font-size: 14px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .brands-25-grid .brand-tile-cat {
+    font-size: 11px !important;
+    white-space: normal;
+  }
+
+  .calc {
+    width: 100%;
+  }
+
+  .calc-inputs {
+    padding: 14px !important;
+  }
+
+  .calc-row-head {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .calc-amount {
+    font-size: 18px;
+  }
+
+  .calc-result {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px !important;
+  }
+
+  .calc-res-list {
+    border-right: 0;
+    border-top: 1px solid var(--border-glass);
+    padding: 14px 0 0;
+  }
+
+  .voucher-vertical-stage {
+    height: 340px;
+    overflow: hidden;
+  }
+
+  .voucher-card-item {
+    width: min(190px, 58vw);
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+
+  .vc-card-1 {
+    transform: translate3d(35px, 15px, 20px) rotate(5deg);
+  }
+
+  .vc-card-2 {
+    transform: translate3d(0, 0, 45px);
+  }
+
+  .vc-card-3 {
+    transform: translate3d(-35px, 15px, 10px) rotate(-5deg);
+  }
+
+  .vc-card-1:hover,
+  .vc-card-2:hover,
+  .vc-card-3:hover {
+    transform: none !important;
+  }
+
+  .logo-dots {
+    --dot: 44px;
+    --gap: 8px;
+  }
+
+  .client-set {
+    gap: 12px;
+  }
+
+  .client-org-unit {
+    width: 120px;
+  }
+
+  .client-circle-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .client-unit-name {
+    font-size: 11px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .why-pillar-title {
+    font-size: 18px !important;
+  }
+
+  .why-pillar-desc {
+    font-size: 13px !important;
+  }
+
+  .welfare-categories-strip {
+    gap: 8px;
+  }
+
+  .welfare-cat-pill {
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .ux-flow-card {
+    padding: 15px !important;
+  }
+
+  .ux-step-pill {
+    max-width: 100%;
+    padding: 9px 12px;
+    font-size: 12px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .imap-map {
+    padding: 10px !important;
+  }
+
+  .imap-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .imap-tip-rich {
+    max-width: calc(100% - 20px);
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .calc-res-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .logo-dots {
+    --dot: 38px;
+    --gap: 6px;
+  }
+
+  .voucher-vertical-stage {
+    height: 290px;
+  }
+
+  .voucher-card-item {
+    width: min(160px, 54vw);
+  }
+
+  .client-org-unit {
+    width: 100px;
+  }
+}
+
+@media (hover: none) {
+  .glass-card:hover,
+  .service-tile:hover,
+  .brand-tile:hover,
+  .company-pill:hover {
+    transform: none;
+  }
+
+  .glass-card:not(.no-collapse) p,
+  .glass-card:not(.no-collapse) ul,
+  .glass-card:not(.no-collapse) .hover-reveal,
+  .service-tile p {
+    max-height: none;
+  }
+
+  .glass-card:not(.no-collapse) p,
+  .glass-card:not(.no-collapse) ul,
+  .glass-card:not(.no-collapse) .hover-reveal,
+  .service-tile p {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-track,
+  .lm-track,
+  .svg-flow-line,
+  .svg-pulse,
+  .ewano-3d-card,
+  .vcard-inner {
+    animation: none !important;
+    transition: none !important;
+  }
+}

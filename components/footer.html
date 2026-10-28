@@ -1,0 +1,43 @@
+
+<footer class="deck-footer">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <div class="nav-controls">
+    <button class="nav-arrow-btn" id="prevBtn" onclick="prevSlide()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+      <span>اسلاید قبلی</span>
+    </button>
+
+    <div class="slide-counter-pill">
+      <span>اسلاید</span>
+      <strong id="currentSlideNum" class="text-green">۱</strong>
+      <span>از</span>
+      <strong id="totalSlideNum">۲۱</strong>
+    </div>
+
+    <button class="nav-arrow-btn" id="nextBtn" onclick="nextSlide()">
+      <span>اسلاید بعدی</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="slide-dots" id="slideDots"></div>
+
+  <div class="text-xs text-muted flex flex-gap-12">
+    <span>
+      راهنما:
+      <kbd class="bg-glass text-white rounded" style="padding:2px 6px;">←</kbd>
+      <kbd class="bg-glass text-white rounded" style="padding:2px 6px;">→</kbd>
+      یا
+      <kbd class="bg-glass text-white rounded" style="padding:2px 6px;">Space</kbd>
+    </span>
+  </div>
+</footer>
